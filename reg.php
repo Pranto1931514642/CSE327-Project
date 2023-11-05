@@ -1,12 +1,13 @@
 <?php
-session_start();
-include('header/header.php');
-include('header/connection.php');
+session_start(); // Start a PHP session.
+include('header/header.php'); // Include the 'header.php' file for the page header.
+include('header/connection.php'); // Include the 'connection.php' file for database connection.
 if(isset($_SESSION['loggedin'])==true){
-	include('header/navadmin.php');
+	include('header/navadmin.php'); // Include the admin navigation menu if the user is logged in.
 }
 else {
-	include('header/navuser.php');
+	include('header/navuser.php'); // Include the user navigation menu if the user is not logged in.
+
 }
 
 ?>
@@ -18,7 +19,7 @@ else {
 	<title>Registration</title>
 	<link rel="icon" href="icon/reg.png" />
 	<style type="text/css">
-
+           
         label { display: inline-block; width: 130px; text-align: center; }
 
 		ul{
@@ -67,19 +68,20 @@ else {
 
 	</ul>
 
+   
 
-
-<h1 align="center">Donor Registration</h1>
+<h1 align="center">Donor Registration</h1> <!-- Form for Donor Registration -->
     <br />
 
+<!-- Start of the registration form -->
 	<form style="text-align:justify;font-size:18px;color:#FF5733" method="post"> 
 <div class="reg">
-	<label for="first" >Full Name:</label>
+	<label for="first" >Full Name:</label> <!-- Full Name Input -->
 	<input id="first" type="text" name="name" placeholder="Full Name"  autofocus required />
 
 	<br /><br />
 
-	<label>Blood Group:</label>
+	<label>Blood Group:</label>  <!-- Blood Group Selection -->
 
 	<select name="bgroup" style="border-radius: 10px">
 		<option>Select</option>
@@ -96,7 +98,7 @@ else {
 
 	<br /><br />
 
-	<label for="Gender">Gender:</label>
+	<label for="Gender">Gender:</label> <!-- Gender Selection -->
 	<input type="radio" name="gender" value="Male"/>Male
 	<input type="radio" name="gender" value="Female"/>Female
 	<input type="radio" name="gender" value="Others"/>Others
@@ -167,11 +169,11 @@ else {
 					$l->bindValue('longitude',$longitude);
 
         if($l->execute()){
-	          echo "<script>alert('Registration Succesfull!')</script>";
+	          echo "<script>alert('Registration Succesfull!')</script>"; //if registration was succesfully done
               }
         }
         else{
-            echo "<script>alert('Registration Failed!')</script>";
+            echo "<script>alert('Registration Failed!')</script>"; //if registration was not succesfully done
         }
     }
 

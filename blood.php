@@ -1,12 +1,12 @@
 <?php
 session_start();
-include('header/header.php');
-include('header/connection.php');
+include('header/header.php');  //Here included the 'header.php' file for the page header.
+include('header/connection.php'); //Here included the 'connection.php' file for database connection.
 if(isset($_SESSION['loggedin'])==true){
-	include('header/navadmin.php');
+	include('header/navadmin.php');  //Here included the admin navigation menu if the user is logged in
 }
 else {
-	include('header/navuser.php');
+	include('header/navuser.php');  //Here included the user navigation menu if the user is not logged in.
 }
 ?>
 
@@ -46,7 +46,7 @@ else {
     <br><br>
   <label>Blood Group: </label>
 <form class="" action="" method="post">
-  <select name="bgroup">
+  <select name="bgroup">  
     <option>Select</option>
     <option>A+</option>
     <option>A-</option>
@@ -61,7 +61,7 @@ else {
     <br>
 
 
-<?php include 'map.php'; ?>
+<?php include 'map.php'; ?>  // Included the 'map.php' file
     </form>
 </div>
 <br></br>
@@ -73,7 +73,7 @@ if(isset($_POST['sub']))
 	$latitude=$_POST['latitude'];
 	$longitude=$_POST['longitude'];
 
-
+      //Here PHP code to retrieve donor information based on the blood group and location.
 ?>
 	<h1 align="center">Donor List</h1>
 	<br>
@@ -89,9 +89,11 @@ if(isset($_POST['sub']))
 			<th>Last Donated</th>
 			<th>Phone Number</th>
 			<th>Address</th>
-
+          
 	  </tr>
 		<?php
+		
+		//Here PHP code to query the database and fetch donor information.
 		$ql=$db->query("SELECT id, abs('$latitude' - latitude) AS a FROM location ORDER BY a LIMIT 2");
 		while ($pl=$ql->fetch(PDO::FETCH_OBJ)) {
 		$id=$pl->id;
