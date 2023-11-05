@@ -1,5 +1,7 @@
 # CSE327-Project
 In my project there was three functions for me in this project.And here is my project documentation-
+
+
 Function 1 HOME-
 Here in the home page the users find 3 parts. No 1 is Register as a donor, No 2 is Search for blood, No 3 is Request for blood. In this home page part here If someone wants to donate blood then their blood will go to PHP for registration.  Then there is the option of adding a donor, there is the option of deleting, and there is the option of list of all donors. Thats all on the home page.
 
