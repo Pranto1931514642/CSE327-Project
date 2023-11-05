@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Map</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div> <!-- Div element to display the Google Map -->
+
+    <!-- Form to input latitude and longitude coordinates -->
+    <p align="center" style="color:black;font-size:22px;"><b>Please Select and Submit Your Current Position on
+            Map:</b></p>
+    <table align="right">
+        <br>
+        <form align="center" class="mp" action="" method="post">
+            <p align="center">
+                <input align="right" id="latclicked" type="number" name="latitude" step="any" placeholder="Latitude"
+                    style="font-size: 18px; width: 180px; height: 30px; border-radius: 10px;">
+
+                <input id="longclicked" type="number" name="longitude" step="any" placeholder="Longitude"
+                    style="font-size: 18px; width: 180px; height: 30px; border-radius: 10px;">
+
+                <input name="sub" type="submit" value="Submit" style="background-color:#1797DB;font-size:18px;" />
+                <input type="reset" value="Reset" style="background-color:#ff0000;color:white;font-size:18px;" />
+            </p>
+            <div id="latmoved" type="text" name="latm"></div>
+            <div id="longmoved" type="text" name="lngm"></div>
+        </form>
+    </table>
+
+    <!-- JavaScript files for map functionality -->
+    <script src="model.js"></script> <!-- MapModel class for data handling -->
+    <script src="view.js"></script> <!-- MapView class for UI rendering -->
+    <script src="controller.js"></script> <!-- MapController class for handling user interactions -->
+
+    <script>
+        var model = new MapModel(); // Create a new instance of MapModel
+        var view = new MapView(); // Create a new instance of MapView
+        var controller = new MapController(model, view); // Create a new instance of MapController
+
+        // Function to initialize the Google Map
+        function initMap() {
+            controller.initMap(); // Initialize the map using the controller
+            google.maps.event.addListener(view.map, 'click', function (event) {
+                controller.handleMapClick(event); // Handle map click events using the controller
+            });
+            google.maps.event.addListener(view.map, 'mousemove', function (event) {
+                controller.handleMapMouseMove(event); // Handle map mousemove events using the controller
+            });
+        }
+    </script>
+
+    <!-- Load Google Maps API with API key and callback function to initialize the map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+   
+</body>
+
+</html>
