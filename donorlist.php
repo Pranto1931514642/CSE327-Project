@@ -1,6 +1,6 @@
 <?php
 include('header/header.php');
-include('header/navadmin.php');
+include('header/admin.php');
 include('header/connection.php');
 ?>
 
