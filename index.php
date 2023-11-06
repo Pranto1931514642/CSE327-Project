@@ -9,11 +9,7 @@ include('header/user.php'); ?>
     organization: 'bloodms',
     appId: '0c5ce182-167c-4e68-afa2-5ee10a086c0e',
   };
-</script>
 
-<script type="text/javascript">
-  (function(w,d){var hS=w.helpcrunchSettings;if(!hS||!hS.organization){return;}var widgetSrc='https://'+hS.organization+'.widget.helpcrunch.com/';w.HelpCrunch=function(){w.HelpCrunch.q.push(arguments)};w.HelpCrunch.q=[];function r(){if (d.querySelector('script[src="' + widgetSrc + '"')) { return; }var s=d.createElement('script');s.async=1;s.type='text/javascript';s.src=widgetSrc;(d.body||d.head).appendChild(s);}if(d.readyState === 'complete'||hS.loadImmediately){r();} else if(w.attachEvent){w.attachEvent('onload',r)}else{w.addEventListener('load',r,false)}})(window, document)
-</script>
 <title>Blood Bank | Welcome</title>
  <link rel="stylesheet" href="./css/style.css">
 
