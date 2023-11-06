@@ -1,6 +1,6 @@
 <?php
 include('header/header.php');
-include('header/navuser.php'); ?>
+include('header/user.php'); ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
