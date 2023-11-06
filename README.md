@@ -25,8 +25,7 @@ The page displays a "Donor List" with a table that includes columns for "ID," "N
 PHP Code for Donor Data:
 
 PHP code queries the database to retrieve donor records from the "donor" table using $db->query("SELECT * FROM donor").
-It then iterates through the results and fetches each record as an object using fetch(PDO::FETCH_OBJ).
-Eligibility Check:
+
 
 Within the loop, the code calculates the time elapsed since the last donation in months and checks if it's greater than or equal to 3 months ($month>=3.0).
 If the donor is eligible (has not donated in the last 3 months), their information is displayed in the table.
