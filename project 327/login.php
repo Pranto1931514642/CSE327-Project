@@ -5,7 +5,7 @@ include('header/navuser.php');
 $page='http://localhost/Blood/home.php';
  ?>
  <!DOCTYPE html>
- <html lang="en" dir="ltr">
+ <html lang="en" dir="ltr">   //(unicode: ltr means Left to right text)
    <head>
 
      <title>Blood Donation | Welcome</title>
@@ -14,7 +14,7 @@ $page='http://localhost/Blood/home.php';
 
    <body>
 
-<div align="center" id="login">
+<div align="center" id="login">   // Align: the practice of formatting my code vertically to improve readability
   <br><br><br>
 <label><b><font size="6" color="#032B41">Admin Login</font></b></label>
 <br><br>
