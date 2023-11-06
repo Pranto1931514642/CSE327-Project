@@ -3,10 +3,10 @@ session_start();
 include('header/header.php');
 include('header/connection.php');
 if(isset($_SESSION['loggedin'])==true){ //cheching if logged in or not and which profile is that
-	include('header/navadmin.php');
+	include('header/admin.php');
 }
 else {
-	include('header/navuser.php');
+	include('header/user.php');
 }
 ?>
 <!DOCTYPE html>
